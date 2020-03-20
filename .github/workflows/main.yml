@@ -1,6 +1,6 @@
 name: Build & Lint Vuetify Dashboard App
 
-# Runs on push events master and release/* branches
+# Runs on push events master and feature/* branches
 # and runs on pull requests that target the master branch
 on:
   push:
