@@ -66,7 +66,7 @@ export default {
     };
   },
   methods: {
-    selectRow(event) {
+    setEmployee(event) {
       this.snackbar = true;
       this.selectedEmployee.name = event.name;
       this.selectedEmployee.title = event.title;
