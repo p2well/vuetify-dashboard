@@ -4,6 +4,12 @@
 
     <SalesGraph v-for="sale in sales" :key="`${sale.title}`" :sale="sale" />
 
+    <StatisticCard
+      v-for="statistic in statistics"
+      :key="`${statistic.title}`"
+      :statistic="statistic"
+    />
+
     <EmployeesTable :employees="employees" @select-employee="setEmployee" />
 
     <v-snackbar v-model="snackbar">
@@ -19,15 +25,18 @@
 <script>
 import EmployeesTable from '@/components/EmployeesTable.vue';
 import SalesGraph from '@/components/SalesGraph.vue';
+import StatisticCard from '@/components/StatisticCard.vue';
 
 import employeesData from '@/data/employees.json';
 import salesData from '@/data/sales.json';
+import statisticsData from '@/data/statistics.json';
 
 export default {
   name: 'DashboadPage',
   components: {
     EmployeesTable,
-    SalesGraph
+    SalesGraph,
+    StatisticCard
   },
   data() {
     return {
@@ -37,7 +46,8 @@ export default {
       },
       snackbar: false,
       employees: employeesData,
-      sales: salesData
+      sales: salesData,
+      statistics: statisticsData
     };
   },
   methods: {
