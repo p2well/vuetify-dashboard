@@ -12,6 +12,8 @@
 
     <EmployeesTable :employees="employees" @select-employee="setEmployee" />
 
+    <EventTimeline :timeline="timeline" />
+
     <v-snackbar v-model="snackbar">
       You have selected {{ selectedEmployee.name }},
       {{ selectedEmployee.title }}
@@ -26,17 +28,20 @@
 import EmployeesTable from '@/components/EmployeesTable.vue';
 import SalesGraph from '@/components/SalesGraph.vue';
 import StatisticCard from '@/components/StatisticCard.vue';
+import EventTimeline from '@/components/EventTimeline.vue';
 
 import employeesData from '@/data/employees.json';
 import salesData from '@/data/sales.json';
 import statisticsData from '@/data/statistics.json';
+import timelineData from '@/data/timeline.json';
 
 export default {
   name: 'DashboadPage',
   components: {
     EmployeesTable,
     SalesGraph,
-    StatisticCard
+    StatisticCard,
+    EventTimeline
   },
   data() {
     return {
@@ -47,7 +52,8 @@ export default {
       snackbar: false,
       employees: employeesData,
       sales: salesData,
-      statistics: statisticsData
+      statistics: statisticsData,
+      timeline: timelineData
     };
   },
   methods: {
