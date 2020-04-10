@@ -60,13 +60,13 @@ export default {
   },
   data() {
     return {
+      employees: employeesData,
+      sales: salesData,
       selectedEmployee: {
         name: '',
         title: ''
       },
       snackbar: false,
-      employees: employeesData,
-      sales: salesData,
       statistics: statisticsData,
       timeline: timelineData
     };
