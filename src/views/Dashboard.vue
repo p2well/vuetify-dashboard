@@ -29,6 +29,36 @@
       </v-col>
     </v-row>
 
+    <v-row>
+      <v-col v-for="x in 4" :key="x" cols="12" md="6" lg="3">
+        <v-skeleton-loader
+          ref="skeleton"
+          type="card"
+          class="mx-auto"
+        ></v-skeleton-loader>
+      </v-col>
+    </v-row>
+
+    <v-row id="below-the-fold" v-intersect="showMoreContent">
+      <v-col v-for="x in 4" :key="x" cols="12" md="6" lg="3">
+        <v-skeleton-loader
+          ref="skeleton"
+          type="card"
+          class="mx-auto"
+        ></v-skeleton-loader>
+      </v-col>
+    </v-row>
+
+    <v-row v-if="loadNewContent" id="more-content">
+      <v-col>
+        <v-skeleton-loader
+          ref="skeleton"
+          type="table"
+          class="mx-auto"
+        ></v-skeleton-loader>
+      </v-col>
+    </v-row>
+
     <v-snackbar v-model="snackbar" :left="$vuetify.breakpoint.lgAndUp">
       You have selected {{ selectedEmployee.name }},
       {{ selectedEmployee.title }}
@@ -61,6 +91,7 @@ export default {
   data() {
     return {
       employees: employeesData,
+      loadNewContent: false,
       sales: salesData,
       selectedEmployee: {
         name: '',
@@ -76,6 +107,9 @@ export default {
       this.snackbar = true;
       this.selectedEmployee.name = event.name;
       this.selectedEmployee.title = event.title;
+    },
+    showMoreContent(entries) {
+      this.loadNewContent = entries[0].isIntersecting;
     }
   }
 };
