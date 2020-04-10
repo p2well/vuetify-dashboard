@@ -17,6 +17,14 @@
         </h1>
       </v-col>
     </v-row>
+    <v-row>
+      <v-col class="d-inline-flex justify-center">
+        <p class="subheading font-weight-regular">
+          For more information about Vuetify please visit
+          <a href="https://vuetifyjs.com" target="_blank">Vuetify Website</a>
+        </p>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
