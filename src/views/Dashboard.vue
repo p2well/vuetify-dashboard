@@ -1,14 +1,9 @@
 <template>
   <div>
     <h1>Dashboard</h1>
-    <v-data-table
-      :headers="headers"
-      :items="employees"
-      :items-per-page="5"
-      class="elevation-1"
-      @click:row="selectRow"
-      :multi-sort="true"
-    ></v-data-table>
+
+    <EmployeesTable :employees="employees" @select-employee="setEmployee" />
+
     <v-snackbar v-model="snackbar">
       You have selected {{ selectedEmployee.name }},
       {{ selectedEmployee.title }}
@@ -20,10 +15,15 @@
 </template>
 
 <script>
+import EmployeesTable from '@/components/EmployeesTable.vue';
+
 import employeesData from '../data/employees.json';
 
 export default {
   name: 'DashboadPage',
+  components: {
+    EmployeesTable
+  },
   data() {
     return {
       selectedEmployee: {
@@ -31,12 +31,6 @@ export default {
         title: ''
       },
       snackbar: false,
-      headers: [
-        { text: 'Employee ID', value: 'id' },
-        { text: 'Name', value: 'name' },
-        { text: 'Position Title', value: 'title' },
-        { text: 'Salary', value: 'salary' }
-      ],
       employees: employeesData
     };
   },
