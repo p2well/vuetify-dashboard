@@ -12,7 +12,13 @@
       >
         {{ link.label }}
       </v-btn>
-      <v-btn @click="toggleTheme" text rounded>Toggle Theme</v-btn>
+      <v-switch
+        v-model="darkThemeSwitch"
+        @change="toggleToDarkTheme"
+        label="Dark Theme"
+        color="white"
+        class="ml-8"
+      ></v-switch>
     </v-app-bar>
     <v-content>
       <router-view></router-view>
@@ -42,28 +48,31 @@
 export default {
   name: 'App',
   components: {},
-  data: () => ({
-    links: [
-      {
-        label: 'Home',
-        url: '/'
-      },
-      {
-        label: 'Login',
-        url: '/login'
-      },
-      {
-        label: 'Singup',
-        url: '/signup'
-      },
-      {
-        label: 'Dashboard',
-        url: '/dashboard'
-      }
-    ]
-  }),
+  data() {
+    return {
+      darkThemeSwitch: false,
+      links: [
+        {
+          label: 'Home',
+          url: '/'
+        },
+        {
+          label: 'Login',
+          url: '/login'
+        },
+        {
+          label: 'Singup',
+          url: '/signup'
+        },
+        {
+          label: 'Dashboard',
+          url: '/dashboard'
+        }
+      ]
+    };
+  },
   methods: {
-    toggleTheme() {
+    toggleToDarkTheme() {
       this.$vuetify.theme.themes.dark.anchor = '#82B1FF';
       this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
     }
