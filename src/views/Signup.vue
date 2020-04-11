@@ -1,9 +1,10 @@
 <template>
   <v-container>
+    <h1 class="display-1">Singup</h1>
+
     <v-row>
       <v-col>
         <v-form ref="signUpForm" v-model="formValidity">
-          <h1>Singup</h1>
           <v-text-field
             label="Email"
             type="email"
