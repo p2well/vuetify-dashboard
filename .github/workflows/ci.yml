@@ -25,8 +25,9 @@ jobs:
 
     steps:
       # Check-out repository under $GITHUB_WORKSPACE, so job can access it
-      - name: Check-out Repository
+      - name: Check-out Repository 🛎
         uses: actions/checkout@v2
+
       # Setup Node.js
       - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v1
