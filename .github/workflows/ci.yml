@@ -12,11 +12,6 @@ on:
       - main
       - master
 
-env:
-  AZURE_WEBAPP_NAME: vuetify-dashboard
-  AZURE_WEBAPP_PACKAGE_PATH: 'dist'
-  NODE_VERSION: '10.x'
-
 jobs:
   build:
     name: Build and Lint Vue.js App
