@@ -1,0 +1,50 @@
+name: Vuetify Dashboard App CI
+
+# Runs on main or master push events
+# and runs on pull requests that target the main or master branch
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
+
+jobs:
+  ci:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node: [14]
+
+    steps:
+      # Check-out repository under $GITHUB_WORKSPACE, so job can access it
+      - name: Check-out Repository 🛎
+        uses: actions/checkout@v2
+
+      # Setup Node environment
+      - name: Setup node env 🏗
+        uses: actions/setup-node@v2.1.4
+        with:
+          node-version: ${{ matrix.os }}
+
+      # Cache dependencies
+      - name: Cache node_modules 📦
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      # Install Dependencies
+      - name: Install Dependencies 👨‍💻
+        run: npm ci
+
+      # Lint App
+      - name: Run linter 👀
+        run: npm run lint
