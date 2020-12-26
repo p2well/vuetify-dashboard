@@ -48,8 +48,9 @@ jobs:
         run: npm ci
 
       # Lint App
-      - name: Lint App
+      - name: Run linter 👀
         run: npm run lint
+
       # Build App
       - name: Build App
         run: npm run build
