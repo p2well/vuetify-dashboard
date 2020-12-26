@@ -28,11 +28,12 @@ jobs:
       - name: Check-out Repository 🛎
         uses: actions/checkout@v2
 
-      # Setup Node.js
-      - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v1
+      # Setup Node environment
+      - name: Setup node env 🏗
+        uses: actions/setup-node@v2.1.4
         with:
-          node-version: ${{ env.NODE_VERSION }}
+          node-version: ${{ matrix.os }}
+
       # Install Dependencies
       - name: Install Dependencies
         run: npm install
