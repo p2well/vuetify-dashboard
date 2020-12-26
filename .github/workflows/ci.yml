@@ -1,4 +1,4 @@
-name: Build & Lint Vuetify Dashboard App
+name: Vuetify Dashboard App CI
 
 # Runs on main or master push events
 # and runs on pull requests that target the main or master branch
@@ -13,9 +13,7 @@ on:
       - master
 
 jobs:
-  build:
-    name: Build and Lint Vue.js App
-
+  ci:
     runs-on: ${{ matrix.os }}
 
     strategy:
