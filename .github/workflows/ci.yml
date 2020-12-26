@@ -44,8 +44,9 @@ jobs:
             ${{ runner.os }}-node-
 
       # Install Dependencies
-      - name: Install Dependencies
-        run: npm install
+      - name: Install Dependencies 👨‍💻
+        run: npm ci
+
       # Lint App
       - name: Lint App
         run: npm run lint
