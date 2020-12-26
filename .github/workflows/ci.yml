@@ -1,14 +1,16 @@
 name: Build & Lint Vuetify Dashboard App
 
-# Runs on push events master and feature/* branches
-# and runs on pull requests that target the master branch
+# Runs on main or master push events
+# and runs on pull requests that target the main or master branch
 on:
   push:
     branches:
+      - main
       - master
-      - feature/*
   pull_request:
-    branches: [master]
+    branches:
+      - main
+      - master
 
 env:
   AZURE_WEBAPP_NAME: vuetify-dashboard
