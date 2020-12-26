@@ -30,7 +30,7 @@ jobs:
       - name: Setup node env 🏗
         uses: actions/setup-node@v2.1.4
         with:
-          node-version: ${{ matrix.os }}
+          node-version: ${{ matrix.node }}
 
       # Cache dependencies
       - name: Cache node_modules 📦
