@@ -31,12 +31,12 @@ export default {
       const employee = {
         name: event.name,
         title: event.title
-      };
+      }
 
-      this.$emit('select-employee', employee);
+      this.$emit('select-employee', employee)
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped></style>

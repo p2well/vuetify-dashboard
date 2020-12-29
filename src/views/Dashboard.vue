@@ -70,15 +70,15 @@
 </template>
 
 <script>
-import EmployeesTable from '@/components/EmployeesTable.vue';
-import SalesGraph from '@/components/SalesGraph.vue';
-import StatisticCard from '@/components/StatisticCard.vue';
-import EventTimeline from '@/components/EventTimeline.vue';
+import EmployeesTable from '@/components/EmployeesTable.vue'
+import SalesGraph from '@/components/SalesGraph.vue'
+import StatisticCard from '@/components/StatisticCard.vue'
+import EventTimeline from '@/components/EventTimeline.vue'
 
-import employeesData from '@/data/employees.json';
-import salesData from '@/data/sales.json';
-import statisticsData from '@/data/statistics.json';
-import timelineData from '@/data/timeline.json';
+import employeesData from '@/data/employees.json'
+import salesData from '@/data/sales.json'
+import statisticsData from '@/data/statistics.json'
+import timelineData from '@/data/timeline.json'
 
 export default {
   name: 'DashboadPage',
@@ -100,19 +100,19 @@ export default {
       snackbar: false,
       statistics: statisticsData,
       timeline: timelineData
-    };
+    }
   },
   methods: {
     setEmployee(event) {
-      this.snackbar = true;
-      this.selectedEmployee.name = event.name;
-      this.selectedEmployee.title = event.title;
+      this.snackbar = true
+      this.selectedEmployee.name = event.name
+      this.selectedEmployee.title = event.title
     },
     showMoreContent(entries) {
-      this.loadNewContent = entries[0].isIntersecting;
+      this.loadNewContent = entries[0].isIntersecting
     }
   }
-};
+}
 </script>
 
 <style scoped></style>

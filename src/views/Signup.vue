@@ -74,20 +74,20 @@ export default {
           'Email should contain a valid domain extension.'
       ],
       formValidity: false
-    };
+    }
   },
   methods: {
     resetValidation() {
-      this.$refs.signUpForm.resetValidation();
+      this.$refs.signUpForm.resetValidation()
     },
     resetForm() {
-      this.$refs.signUpForm.reset();
+      this.$refs.signUpForm.reset()
     },
     validateForm() {
-      this.$refs.signUpForm.validate();
+      this.$refs.signUpForm.validate()
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped></style>
