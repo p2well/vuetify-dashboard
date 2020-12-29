@@ -30,7 +30,7 @@ export default {
       required: true
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped></style>

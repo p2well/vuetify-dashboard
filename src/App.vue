@@ -70,13 +70,13 @@ export default {
           url: '/dashboard'
         }
       ]
-    };
+    }
   },
   methods: {
     toggleToDarkTheme() {
-      this.$vuetify.theme.themes.dark.anchor = '#82B1FF';
-      this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
+      this.$vuetify.theme.themes.dark.anchor = '#82B1FF'
+      this.$vuetify.theme.dark = !this.$vuetify.theme.dark
     }
   }
-};
+}
 </script>
